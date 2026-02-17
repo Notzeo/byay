@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Birthday Bubble! 🫧💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Sacramento&family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-bubble"></div>
+            <div class="preloader-bubble b2"></div>
+            <div class="preloader-bubble b3"></div>
+            <p class="preloader-text">Preparing something special for you...</p>
+            <p class="preloader-sub">🫧 Bubble 🫧</p>
+        </div>
+    </div>
+
+    <!-- Floating Bubbles Background -->
+    <div id="bubbles-container"></div>
+
+    <!-- Sparkle cursor trail -->
+    <div id="cursor-trail"></div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="bg-music" loop>
+        <source src="" type="audio/mpeg">
+    </audio>
+    <audio id="photo-music">
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <!-- ============ SECTION 1: HERO / ENTRANCE ============ -->
+    <section id="hero" class="section">
+        <div class="hero-content">
+            <div class="hero-sparkles">
+                <span>✨</span><span>💫</span><span>⭐</span><span>✨</span><span>💫</span>
+            </div>
+            <div class="hero-age">
+                <span class="age-number" id="age-counter">20</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line line1">Happy Birthday</span>
+                <span class="title-line line2">Bubble</span>
+                <span class="bubble-emoji">🫧</span>
+            </h1>
+            <p class="hero-subtitle">Today the world celebrates someone truly magical</p>
+            <div class="hero-date">
+                <span class="date-icon">🎂</span>
+                <span class="date-text">Your Special Day</span>
+                <span class="date-icon">🎂</span>
+            </div>
+            <button class="enter-btn" id="enterBtn">
+                <span class="btn-text">Open Your Gift</span>
+                <span class="btn-icon">🎁</span>
+                <div class="btn-sparkle"></div>
+            </button>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+        <div class="hero-decorations">
+            <div class="floating-heart h1">💖</div>
+            <div class="floating-heart h2">💕</div>
+            <div class="floating-heart h3">💗</div>
+            <div class="floating-heart h4">🦋</div>
+            <div class="floating-heart h5">🌸</div>
+            <div class="floating-heart h6">💖</div>
+            <div class="floating-heart h7">🫧</div>
+            <div class="floating-heart h8">✨</div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 2: COUNTDOWN / AGE CELEBRATION ============ -->
+    <section id="countdown-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">🫧</span>
+                Two Decades of Wonderful
+                <span class="title-deco">🫧</span>
+            </h2>
+            <div class="decades-timeline">
+                <div class="decade-card" data-aos="fade-up">
+                    <div class="decade-icon">👶</div>
+                    <div class="decade-range">0 - 5</div>
+                    <p>The world got its cutest blessing</p>
+                </div>
+                <div class="decade-line"></div>
+                <div class="decade-card" data-aos="fade-up">
+                    <div class="decade-icon">🌸</div>
+                    <div class="decade-range">5 - 10</div>
+                    <p>Growing into a little sunshine</p>
+                </div>
+                <div class="decade-line"></div>
+                <div class="decade-card" data-aos="fade-up">
+                    <div class="decade-icon">🦋</div>
+                    <div class="decade-range">10 - 15</div>
+                    <p>Blooming into something beautiful</p>
+                </div>
+                <div class="decade-line"></div>
+                <div class="decade-card" data-aos="fade-up">
+                    <div class="decade-icon">💖</div>
+                    <div class="decade-range">15 - 20</div>
+                    <p>Becoming the most amazing person I know</p>
+                </div>
+            </div>
+            <div class="age-celebration">
+                <div class="candles-container">
+                    <div class="cake-emoji">🎂</div>
+                    <div class="candles">
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                        <span class="number-candle">2</span>
+                        <span class="number-candle">0</span>
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                    </div>
+                    <button class="blow-btn" id="blowBtn">
+                        <span>Make a Wish & Blow! 🌬️</span>
+                    </button>
+                    <div class="wish-text" id="wishText">
+                        ✨ May all your wishes come true, Bubble! ✨
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 3: REASONS I LOVE YOU ============ -->
+    <section id="reasons-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">💕</span>
+                20 Reasons You're Amazing
+                <span class="title-deco">💕</span>
+            </h2>
+            <p class="section-subtitle">One for each beautiful year of your life</p>
+            <div class="reasons-grid">
+                <div class="reason-card" style="--delay: 0"><span class="reason-num">1</span><p>Your smile lights up my entire universe</p></div>
+                <div class="reason-card" style="--delay: 1"><span class="reason-num">2</span><p>The way you laugh makes everything better</p></div>
+                <div class="reason-card" style="--delay: 2"><span class="reason-num">3</span><p>Your kindness touches everyone around you</p></div>
+                <div class="reason-card" style="--delay: 3"><span class="reason-num">4</span><p>You make ordinary moments feel magical</p></div>
+                <div class="reason-card" style="--delay: 4"><span class="reason-num">5</span><p>Your eyes hold galaxies I want to explore forever</p></div>
+                <div class="reason-card" style="--delay: 5"><span class="reason-num">6</span><p>The way you care about others so deeply</p></div>
+                <div class="reason-card" style="--delay: 6"><span class="reason-num">7</span><p>Your strength inspires me every single day</p></div>
+                <div class="reason-card" style="--delay: 7"><span class="reason-num">8</span><p>How you make even silence feel comfortable</p></div>
+                <div class="reason-card" style="--delay: 8"><span class="reason-num">9</span><p>Your voice is my favorite sound in the world</p></div>
+                <div class="reason-card" style="--delay: 9"><span class="reason-num">10</span><p>The way you scrunch your nose when you laugh</p></div>
+                <div class="reason-card" style="--delay: 10"><span class="reason-num">11</span><p>You believe in me when I don't believe in myself</p></div>
+                <div class="reason-card" style="--delay: 11"><span class="reason-num">12</span><p>Your hugs feel like coming home</p></div>
+                <div class="reason-card" style="--delay: 12"><span class="reason-num">13</span><p>How passionate you are about things you love</p></div>
+                <div class="reason-card" style="--delay: 13"><span class="reason-num">14</span><p>You make me want to be a better person</p></div>
+                <div class="reason-card" style="--delay: 14"><span class="reason-num">15</span><p>The cute way you get excited about little things</p></div>
+                <div class="reason-card" style="--delay: 15"><span class="reason-num">16</span><p>Your intelligence and wisdom beyond your years</p></div>
+                <div class="reason-card" style="--delay: 16"><span class="reason-num">17</span><p>How beautiful you look without even trying</p></div>
+                <div class="reason-card" style="--delay: 17"><span class="reason-num">18</span><p>The way you remember the smallest details about us</p></div>
+                <div class="reason-card" style="--delay: 18"><span class="reason-num">19</span><p>You are my favorite adventure and my safest place</p></div>
+                <div class="reason-card" style="--delay: 19"><span class="reason-num">20</span><p>Simply because you're YOU — my Bubble 🫧</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 4: PHOTO GALLERY WITH MUSIC ============ -->
+    <section id="gallery-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">📸</span>
+                Our Beautiful Moments
+                <span class="title-deco">📸</span>
+            </h2>
+            <p class="section-subtitle">Click on any photo to play our song 🎵</p>
+            <div class="gallery-grid">
+                <!-- Photo 1 -->
+                <div class="gallery-item gi-large" data-song="music/song1.mp3" data-caption="My favorite face in the whole world 💖">
+                    <div class="photo-frame">
+                        <img src="img1.jpeg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">Cutest 💖</div>
+                    </div>
+                </div>
+                <!-- Photo 2 -->
+                <div class="gallery-item" data-song="music/song2.mp3" data-caption="That smile that makes my heart skip 💕">
+                    <div class="photo-frame">
+                        <img src="photos/photo2.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">That smile 💕</div>
+                    </div>
+                </div>
+                <!-- Photo 3 -->
+                <div class="gallery-item" data-song="music/song3.mp3" data-caption="The prettiest girl ever 🌸">
+                    <div class="photo-frame">
+                        <img src="photos/photo3.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">Prettiest ever 🌸</div>
+                    </div>
+                </div>
+                <!-- Photo 4 -->
+                <div class="gallery-item gi-wide" data-song="music/song4.mp3" data-caption="Us against the world 🌍💫">
+                    <div class="photo-frame">
+                        <img src="photos/photo4.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">Us against the world 🌍</div>
+                    </div>
+                </div>
+                <!-- Photo 5 -->
+                <div class="gallery-item" data-song="music/song5.mp3" data-caption="My sunshine on cloudy days ☀️">
+                    <div class="photo-frame">
+                        <img src="photos/photo5.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">My sunshine ☀️</div>
+                    </div>
+                </div>
+                <!-- Photo 6 -->
+                <div class="gallery-item gi-large" data-song="music/song6.mp3" data-caption="This one's my wallpaper btw 📱💗">
+                    <div class="photo-frame">
+                        <img src="photos/photo6.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">My wallpaper 📱💗</div>
+                    </div>
+                </div>
+                <!-- Photo 7 -->
+                <div class="gallery-item" data-song="music/song7.mp3" data-caption="Can't stop looking at this one 👀✨">
+                    <div class="photo-frame">
+                        <img src="photos/photo7.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">Can't stop looking 👀</div>
+                    </div>
+                </div>
+                <!-- Photo 8 -->
+                <div class="gallery-item gi-wide" data-song="music/song8.mp3" data-caption="My heart, my home, my everything 🏠💖">
+                    <div class="photo-frame">
+                        <img src="photos/photo8.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">My everything 🏠💖</div>
+                    </div>
+                </div>
+                <!-- Photo 9 -->
+                <div class="gallery-item gi-large" data-song="music/song9.mp3" data-caption="The most beautiful soul I know 🫧💜">
+                    <div class="photo-frame">
+                        <img src="photos/photo9.jpg" alt="Bubble" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="play-icon">🎵</span>
+                            <span class="photo-caption">Click to play our song</span>
+                        </div>
+                        <div class="polaroid-caption">Beautiful soul 🫧💜</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Now Playing Bar -->
+            <div class="now-playing" id="nowPlaying">
+                <div class="np-visualizer">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="np-info">
+                    <span class="np-label">Now Playing</span>
+                    <span class="np-caption" id="npCaption"></span>
+                </div>
+                <button class="np-close" id="npClose">✕</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 5: PHOTO LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- ============ SECTION 6: STAR WISHES ============ -->
+    <section id="stars-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title light-title">
+                <span class="title-deco">⭐</span>
+                Birthday Wishes Written in Stars
+                <span class="title-deco">⭐</span>
+            </h2>
+            <div class="stars-sky" id="starsSky">
+                <!-- Stars will be generated by JS -->
+            </div>
+            <div class="wishes-carousel">
+                <div class="wish-slide active">
+                    <div class="wish-star">🌟</div>
+                    <p>I wish for your every dream to find its way to you</p>
+                </div>
+                <div class="wish-slide">
+                    <div class="wish-star">💫</div>
+                    <p>I wish for endless laughter to fill your days</p>
+                </div>
+                <div class="wish-slide">
+                    <div class="wish-star">⭐</div>
+                    <p>I wish for all the happiness this universe can offer you</p>
+                </div>
+                <div class="wish-slide">
+                    <div class="wish-star">✨</div>
+                    <p>I wish for us to create a million more memories together</p>
+                </div>
+                <div class="wish-slide">
+                    <div class="wish-star">🌙</div>
+                    <p>I wish for you to see yourself the way I see you — absolutely perfect</p>
+                </div>
+            </div>
+            <div class="wish-nav">
+                <button class="wish-nav-btn" id="wishPrev">←</button>
+                <div class="wish-dots" id="wishDots"></div>
+                <button class="wish-nav-btn" id="wishNext">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 7: TIMELINE OF US ============ -->
+    <section id="timeline-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">💞</span>
+                Our Story So Far
+                <span class="title-deco">💞</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-dot">💕</div>
+                    <div class="timeline-content">
+                        <h3>When We First Met</h3>
+                        <p>The moment that changed everything. I didn't know it then, but my whole world was about to get so much more beautiful.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot">🫧</div>
+                    <div class="timeline-content">
+                        <h3>When You Became "Bubble"</h3>
+                        <p>Because you're light, floating, magical, and you make everything around you sparkle — just like a bubble.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot">💖</div>
+                    <div class="timeline-content">
+                        <h3>First "I Love You"</h3>
+                        <p>Three words that still feel like magic every time. And I mean it more with each passing day.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot">🌸</div>
+                    <div class="timeline-content">
+                        <h3>Our Favorite Memories</h3>
+                        <p>Every laugh, every late-night call, every silly argument, every "I miss you" — all of them are my treasures.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot">🎂</div>
+                    <div class="timeline-content">
+                        <h3>Today — Your 20th Birthday!</h3>
+                        <p>And here we are. Celebrating YOU. The most incredible person in my life turning a beautiful 20. 🫧✨</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot">🔮</div>
+                    <div class="timeline-content">
+                        <h3>Our Forever — The Future</h3>
+                        <p>A million more birthdays to celebrate, a million more memories to make. I can't wait for every single one with you. 💖</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 8: VIRTUAL GIFT BOX ============ -->
+    <section id="gift-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">🎁</span>
+                A Little Something For You
+                <span class="title-deco">🎁</span>
+            </h2>
+            <div class="gift-box-container">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-lid" id="giftLid">
+                        <div class="gift-bow">🎀</div>
+                    </div>
+                    <div class="gift-body">
+                        <div class="gift-ribbon-v"></div>
+                        <div class="gift-ribbon-h"></div>
+                    </div>
+                    <div class="gift-message" id="giftMessage">
+                        <div class="gift-confetti" id="giftConfetti"></div>
+                        <p class="gift-text">
+                            🫧 Happy 20th Birthday, my precious Bubble! 🫧
+                            <br><br>
+                            You are the reason my days are brighter, my laughs are louder, 
+                            and my heart is fuller. Thank you for being you — beautifully, 
+                            wonderfully, perfectly you.
+                            <br><br>
+                            Here's to 20 and all the magic it brings! 
+                            <br>
+                            I love you to the moon and back 🌙💖
+                        </p>
+                    </div>
+                </div>
+                <p class="gift-instruction" id="giftInstruction">✨ Tap the gift to open it! ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 9: HANDWRITTEN LETTER ============ -->
+    <section id="letter-section" class="section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-deco">💌</span>
+                A Letter For You
+                <span class="title-deco">💌</span>
+            </h2>
+            <div class="notebook">
+                <div class="notebook-spiral">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="notebook-page">
+                    <div class="notebook-margin"></div>
+                    <div class="notebook-content">
+                        <p class="letter-date">On your 20th Birthday 🎂</p>
+                        <br>
+                        <p class="letter-greeting">Dear Bubble,</p>
+                        <br>
+                        <p class="letter-body">
+                            <!-- ============================================ -->
+                            <!-- WRITE YOUR PERSONAL MESSAGE HERE -->
+                            <!-- Replace the text below with your own words -->
+                            <!-- ============================================ -->
+
+                            Happy 20th birthday, dear! 🫧
+                            <br><br>
+                            I can't believe you're 20 already. It feels like just yesterday 
+                            when everything started, and now look at us. You've grown into 
+                            the most beautiful, kind, strong, and amazing person, and I feel 
+                            so lucky to be by your side through it all.
+                            <br><br>
+                            Every moment with you is my favorite moment. Your laugh is my 
+                            favorite sound. Your smile is my favorite sight. And you — you 
+                            are my favorite everything.
+                            <br><br>
+                            I know life isn't always easy, but I want you to know that no 
+                            matter what happens, I'll always be here. Through every high and 
+                            every low, through every bubble and every storm — I'm not going 
+                            anywhere.
+                            <br><br>
+                            This year, I wish for you everything your heart desires. I wish 
+                            for your dreams to come true, for your days to be filled with 
+                            love and laughter, and for you to always know how incredibly 
+                            special you are.
+                            <br><br>
+                            Thank you for being my person, my best friend, my Bubble. 
+                            I love you more than words could ever say. 💖
+                            <br><br>
+                            Here's to twenty and forever more! 🥂🫧
+                        </p>
+                        <br>
+                        <p class="letter-closing">
+                            Forever yours,
+                            <br>
+                            <span class="letter-signature">
+                                <!-- PUT YOUR NAME HERE -->
+                                Your Person 💖
+                            </span>
+                        </p>
+                        <div class="letter-doodles">
+                            <span class="doodle d1">💖</span>
+                            <span class="doodle d2">🫧</span>
+                            <span class="doodle d3">✨</span>
+                            <span class="doodle d4">🌸</span>
+                            <span class="doodle d5">💕</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 10: FINAL CELEBRATION ============ -->
+    <section id="finale-section" class="section">
+        <div class="section-container">
+            <div class="finale-content">
+                <div class="finale-emojis">
+                    🎂 🫧 💖 🎉 ✨ 🦋 🌸 💕
+                </div>
+                <h2 class="finale-title">Happy 20th Birthday</h2>
+                <h1 class="finale-name">Bubble</h1>
+                <p class="finale-message">
+                    May this year bring you everything you deserve and more.
+                    <br>You are loved. You are cherished. You are my everything. 🫧💖
+                </p>
+                <button class="confetti-btn" id="confettiBtn">
+                    🎉 Launch Birthday Confetti! 🎉
+                </button>
+                <div class="finale-hearts" id="finaleHearts"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Navigation Dots -->
+    <nav class="side-nav" id="sideNav">
+        <a href="#hero" class="nav-dot active" data-section="hero" title="Home">
+            <span class="dot-label">Home</span>
+        </a>
+        <a href="#countdown-section" class="nav-dot" data-section="countdown-section" title="Decades">
+            <span class="dot-label">Decades</span>
+        </a>
+        <a href="#reasons-section" class="nav-dot" data-section="reasons-section" title="Reasons">
+            <span class="dot-label">20 Reasons</span>
+        </a>
+        <a href="#gallery-section" class="nav-dot" data-section="gallery-section" title="Gallery">
+            <span class="dot-label">Gallery</span>
+        </a>
+        <a href="#stars-section" class="nav-dot" data-section="stars-section" title="Wishes">
+            <span class="dot-label">Wishes</span>
+        </a>
+        <a href="#timeline-section" class="nav-dot" data-section="timeline-section" title="Our Story">
+            <span class="dot-label">Our Story</span>
+        </a>
+        <a href="#gift-section" class="nav-dot" data-section="gift-section" title="Gift">
+            <span class="dot-label">Gift</span>
+        </a>
+        <a href="#letter-section" class="nav-dot" data-section="letter-section" title="Letter">
+            <span class="dot-label">Letter</span>
+        </a>
+        <a href="#finale-section" class="nav-dot" data-section="finale-section" title="Finale">
+            <span class="dot-label">Finale</span>
+        </a>
+    </nav>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" title="Toggle Background Music">
+        <span class="music-icon">🎵</span>
+        <span class="music-bars">
+            <span></span><span></span><span></span>
+        </span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
