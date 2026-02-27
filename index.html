@@ -174,10 +174,10 @@
                 Our Beautiful Moments
                 <span class="title-deco">📸</span>
             </h2>
-            <p class="section-subtitle">Click on any photo to play our song 🎵</p>
+            <p class="section-subtitle">Click on any photo to play song 🎵</p>
             <div class="gallery-grid">
                 <!-- Photo 1 -->
-                <div class="gallery-item gi-large" data-song="music/song1.mp3" data-caption="My favorite face in the whole world 💖">
+                <div class="gallery-item gi-large" data-song="./blue.mp3" data-caption="My favorite face in the whole world 💖">
                     <div class="photo-frame">
                         <img src="img1.jpeg" alt="Bubble" loading="lazy">
                         <div class="photo-overlay">
@@ -188,23 +188,23 @@
                     </div>
                 </div>
                 <!-- Photo 2 -->
-                <div class="gallery-item" data-song="music/song2.mp3" data-caption="That smile that makes my heart skip 💕">
+                <div class="gallery-item" data-song="./dandelions.mp3" data-caption="That smile that makes my heart skip 💕">
                     <div class="photo-frame">
-                        <img src="photos/photo2.jpg" alt="Bubble" loading="lazy">
+                        <img src="IMG_E9702.JPG" alt="Bubble" loading="lazy">
                         <div class="photo-overlay">
                             <span class="play-icon">🎵</span>
-                            <span class="photo-caption">Click to play our song</span>
+                            <span class="photo-caption">Click to play</span>
                         </div>
                         <div class="polaroid-caption">That smile 💕</div>
                     </div>
                 </div>
                 <!-- Photo 3 -->
-                <div class="gallery-item" data-song="music/song3.mp3" data-caption="The prettiest girl ever 🌸">
+                <div class="gallery-item" data-song="co2.mp3" data-caption="The prettiest girl ever 🌸">
                     <div class="photo-frame">
-                        <img src="photos/photo3.jpg" alt="Bubble" loading="lazy">
+                        <img src="may.jpg" alt="Bubble" loading="lazy">
                         <div class="photo-overlay">
                             <span class="play-icon">🎵</span>
-                            <span class="photo-caption">Click to play our song</span>
+                            <span class="photo-caption">Click to play</span>
                         </div>
                         <div class="polaroid-caption">Prettiest ever 🌸</div>
                     </div>
@@ -239,7 +239,7 @@
                             <span class="play-icon">🎵</span>
                             <span class="photo-caption">Click to play our song</span>
                         </div>
-                        <div class="polaroid-caption">My wallpaper 📱💗</div>
+                        <div class="polaroid-caption">My better half 📱💗</div>
                     </div>
                 </div>
                 <!-- Photo 7 -->
@@ -261,7 +261,7 @@
                             <span class="play-icon">🎵</span>
                             <span class="photo-caption">Click to play our song</span>
                         </div>
-                        <div class="polaroid-caption">My everything 🏠💖</div>
+                        <div class="polaroid-caption">Pookie 💖</div>
                     </div>
                 </div>
                 <!-- Photo 9 -->
@@ -299,13 +299,14 @@
             <p class="lightbox-caption" id="lightboxCaption"></p>
         </div>
     </div>
+    <button onclick="startDream()">A dream from That Day… 💭</button>
 
     <!-- ============ SECTION 6: STAR WISHES ============ -->
     <section id="stars-section" class="section">
         <div class="section-container">
             <h2 class="section-title light-title">
                 <span class="title-deco">⭐</span>
-                Birthday Wishes Written in Stars
+                 Wishes in Stars
                 <span class="title-deco">⭐</span>
             </h2>
             <div class="stars-sky" id="starsSky">
@@ -346,7 +347,7 @@
         <div class="section-container">
             <h2 class="section-title">
                 <span class="title-deco">💞</span>
-                Our Story So Far
+                The Story So Far
                 <span class="title-deco">💞</span>
             </h2>
             <div class="timeline">
@@ -361,13 +362,13 @@
                     <div class="timeline-dot">🫧</div>
                     <div class="timeline-content">
                         <h3>When You Became "Bubble"</h3>
-                        <p>Because you're light, floating, magical, and you make everything around you sparkle — just like a bubble.</p>
+                        <p>Because you're light, dreamy, magical, and you make everything around you sparkle, just like a bubble.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="timeline-dot">💖</div>
                     <div class="timeline-content">
-                        <h3>First "I Love You"</h3>
+                        <h3>First </h3>
                         <p>Three words that still feel like magic every time. And I mean it more with each passing day.</p>
                     </div>
                 </div>
@@ -570,6 +571,12 @@
             <span></span><span></span><span></span>
         </span>
     </button>
+    <div id="dreamOverlay" class="dream-overlay">
+    <div class="dream-content">
+        <img id="dreamImage" src="./img1.png">
+        <p class="dream-text">Maybe it never happened… but it felt real.</p>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>

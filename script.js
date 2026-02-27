@@ -1,7 +1,3 @@
-// ============================================
-// BUBBLE'S 20TH BIRTHDAY - COMPLETE JAVASCRIPT
-// ============================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Preloader ----
@@ -35,31 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 30000);
     }
-    // Create initial bubbles
-    for (let i = 0; i < 15; i++) {
-        setTimeout(createBubble, i * 500);
-    }
+    // // Create initial bubbles
+    // for (let i = 0; i < 15; i++) {
+    //     setTimeout(createBubble, i * 500);
+    // }
     // Keep creating bubbles
     setInterval(createBubble, 3000);
 
-    // ---- Sparkle Cursor Trail (Desktop Only) ----
-    if (window.innerWidth > 768) {
-        const sparkles = ['✨', '💖', '⭐', '🫧', '💕', '✦', '♡'];
-        let sparkleThrottle = 0;
-        document.addEventListener('mousemove', (e) => {
-            sparkleThrottle++;
-            if (sparkleThrottle % 4 !== 0) return;
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle-trail');
-            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-            sparkle.style.left = e.clientX + 'px';
-            sparkle.style.top = e.clientY + 'px';
-            document.body.appendChild(sparkle);
-            setTimeout(() => {
-                if (sparkle.parentNode) sparkle.remove();
-            }, 800);
-        });
-    }
+    // // ---- Sparkle Cursor Trail (Desktop Only) ----
+    // if (window.innerWidth > 768) {
+    //     const sparkles = ['✨', '💖', '⭐', '🫧', '💕', '✦', '♡'];
+    //     let sparkleThrottle = 0;
+    //     document.addEventListener('mousemove', (e) => {
+    //         sparkleThrottle++;
+    //         if (sparkleThrottle % 4 !== 0) return;
+    //         const sparkle = document.createElement('div');
+    //         sparkle.classList.add('sparkle-trail');
+    //         sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+    //         sparkle.style.left = e.clientX + 'px';
+    //         sparkle.style.top = e.clientY + 'px';
+    //         document.body.appendChild(sparkle);
+    //         setTimeout(() => {
+    //             if (sparkle.parentNode) sparkle.remove();
+    //         }, 800);
+    //     });
+    // }
 
     // ---- Enter Button ----
     const enterBtn = document.getElementById('enterBtn');
@@ -239,16 +235,16 @@ document.addEventListener('DOMContentLoaded', () => {
         star.style.animationDelay = Math.random() * 5 + 's';
         starsSky.appendChild(star);
     }
-    // Generate shooting stars
-    for (let i = 0; i < 3; i++) {
-        const shoot = document.createElement('div');
-        shoot.classList.add('shooting-star');
-        shoot.style.left = Math.random() * 60 + '%';
-        shoot.style.top = Math.random() * 40 + '%';
-        shoot.style.animationDelay = (Math.random() * 8 + i * 5) + 's';
-        shoot.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        starsSky.appendChild(shoot);
-    }
+    // // Generate shooting stars
+    // for (let i = 0; i < 3; i++) {
+    //     const shoot = document.createElement('div');
+    //     shoot.classList.add('shooting-star');
+    //     shoot.style.left = Math.random() * 60 + '%';
+    //     shoot.style.top = Math.random() * 40 + '%';
+    //     shoot.style.animationDelay = (Math.random() * 8 + i * 5) + 's';
+    //     shoot.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    //     starsSky.appendChild(shoot);
+    // }
 
     // ---- Wishes Carousel ----
     const wishSlides = document.querySelectorAll('.wish-slide');
@@ -284,10 +280,10 @@ document.addEventListener('DOMContentLoaded', () => {
     wishNext.addEventListener('click', () => goToWish(currentWish + 1));
     wishPrev.addEventListener('click', () => goToWish(currentWish - 1));
 
-    // Auto advance wishes
-    setInterval(() => {
-        goToWish(currentWish + 1);
-    }, 5000);
+    // // Auto advance wishes
+    // setInterval(() => {
+    //     goToWish(currentWish + 1);
+    // }, 5000);
 
     // ---- Gift Box ----
     const giftBox = document.getElementById('giftBox');
@@ -508,50 +504,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ---- Parallax-like effect on hero ----
-    if (window.innerWidth > 768) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.getElementById('hero');
-            if (hero) {
-                const heroContent = hero.querySelector('.hero-content');
-                if (heroContent && scrolled < window.innerHeight) {
-                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
-                }
-            }
-        });
-    }
-
-    // ---- Easter Egg: Konami Code ----
-    let konamiCode = [];
-    const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-
-    document.addEventListener('keydown', (e) => {
-        konamiCode.push(e.key);
-        if (konamiCode.length > konamiSequence.length) {
-            konamiCode.shift();
-        }
-        if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
-            // Super confetti!
-            launchConfetti(500);
-            document.body.style.animation = 'rainbowBg 2s ease';
-            setTimeout(() => {
-                document.body.style.animation = '';
-            }, 2000);
-        }
-    });
-
-    const rainbowStyle = document.createElement('style');
-    rainbowStyle.textContent = `
-        @keyframes rainbowBg {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(rainbowStyle);
-
     console.log('🫧 Happy 20th Birthday, Bubble! 💖');
     console.log('Made with all the love in the world ✨');
 
 });
+let dreamImages = [
+    "./img1.png",
+    "./img2.png",
+    "./img3.png",
+    "./img4.png",
+    "./img5.png"
+];
+
+let dreamIndex = 0;
+
+function startDream() {
+    document.getElementById("dreamOverlay").style.display = "flex";
+    dreamIndex = 0;
+    showDreamImage();
+}
+
+function showDreamImage() {
+    let img = document.getElementById("dreamImage");
+
+    img.style.opacity = 0;
+
+    setTimeout(() => {
+        img.src = dreamImages[dreamIndex];
+        img.style.opacity = 1;
+        dreamIndex++;
+
+        if (dreamIndex < dreamImages.length) {
+            setTimeout(showDreamImage, 2500);
+        } else {
+            setTimeout(() => {
+                document.getElementById("dreamOverlay").style.display = "none";
+            }, 2500);
+        }
+    }, 800);
+}

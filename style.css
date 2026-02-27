@@ -1,8 +1,3 @@
-/* ============================================
-   BUBBLE'S 20TH BIRTHDAY - COMPLETE STYLES
-   ============================================ */
-
-/* ---- CSS Variables ---- */
 :root {
     --pink-light: #fce4ec;
     --pink: #f8bbd0;
@@ -1975,4 +1970,32 @@ body {
 
 .no-scroll {
     overflow: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+.dream-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.dream-content img {
+    width: 350px;
+    border-radius: 20px;
+    transition: opacity 1s ease;
+}
+
+.dream-text {
+    margin-top: 20px;
+    color: white;
+    font-style: italic;
 }
