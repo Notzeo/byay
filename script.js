@@ -137,11 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 
-    // Observe notebook
-    const notebook = document.querySelector('.notebook');
-    if (notebook) {
-        observer.observe(notebook);
-    }
+    // // Observe notebook
+    // const notebook = document.querySelector('.notebook');
+    // if (notebook) {
+    //     observer.observe(notebook);
+    // }
 
     // Observe handwritten letter
     const letter = document.getElementById('handwrittenLetter');
