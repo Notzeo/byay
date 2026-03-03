@@ -143,6 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(notebook);
     }
 
+    // Observe handwritten letter
+    const letter = document.getElementById('handwrittenLetter');
+    if (letter) {
+        observer.observe(letter);
+        letter.style.transitionDelay = '0.2s'; // optional delay
+        }
+
     // ---- Side Navigation Active State ----
     const sections = document.querySelectorAll('.section');
     const navDots = document.querySelectorAll('.nav-dot');
