@@ -11,6 +11,39 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         preloader.classList.add('hidden');
     }, 4000);
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
+    const line3 = document.getElementById("line3");
+    const bubbleBtn = document.getElementById("bubble-button");
+    const introScreen = document.getElementById("intro-screen");
+    
+    setTimeout(() => {
+      line1.classList.add("show");
+    }, 500);
+    
+    setTimeout(() => {
+      line2.classList.remove("hidden");
+      line2.classList.add("show");
+    }, 3000);
+    
+    setTimeout(() => {
+      line3.classList.remove("hidden");
+      line3.classList.add("show");
+    }, 6000);
+    
+    setTimeout(() => {
+      bubbleBtn.classList.remove("hidden");
+      bubbleBtn.classList.add("show");
+    }, 9000);
+    
+    bubbleBtn.addEventListener("click", () => {
+      introScreen.style.opacity = "0";
+      introScreen.style.transition = "opacity 2s ease";
+    
+      setTimeout(() => {
+        introScreen.style.display = "none";
+      }, 2000);
+    });
 
     // ---- Floating Bubbles Background ----
     const bubblesContainer = document.getElementById('bubbles-container');
