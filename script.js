@@ -64,39 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 30000);
     }
-    // // Create initial bubbles
-    // for (let i = 0; i < 15; i++) {
-    //     setTimeout(createBubble, i * 500);
-    // }
-    // Keep creating bubbles
     setInterval(createBubble, 3000);
-
-    // // ---- Sparkle Cursor Trail (Desktop Only) ----
-    // if (window.innerWidth > 768) {
-    //     const sparkles = ['✨', '💖', '⭐', '🫧', '💕', '✦', '♡'];
-    //     let sparkleThrottle = 0;
-    //     document.addEventListener('mousemove', (e) => {
-    //         sparkleThrottle++;
-    //         if (sparkleThrottle % 4 !== 0) return;
-    //         const sparkle = document.createElement('div');
-    //         sparkle.classList.add('sparkle-trail');
-    //         sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-    //         sparkle.style.left = e.clientX + 'px';
-    //         sparkle.style.top = e.clientY + 'px';
-    //         document.body.appendChild(sparkle);
-    //         setTimeout(() => {
-    //             if (sparkle.parentNode) sparkle.remove();
-    //         }, 800);
-    //     });
-    // }
 
     // ---- Enter Button ----
     const enterBtn = document.getElementById('enterBtn');
     enterBtn.addEventListener('click', () => {
         document.getElementById('countdown-section').scrollIntoView({ behavior: 'smooth' });
-        // Try to autoplay music
-        // const bgMusic = document.getElementById('bg-music');
-        // bgMusic.play().catch(() => {});
+        
     });
 
     // ---- Scroll Animations (Intersection Observer) ----
@@ -137,18 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 
-    // // Observe notebook
-    // const notebook = document.querySelector('.notebook');
-    // if (notebook) {
-    //     observer.observe(notebook);
-    // }
-
-    // Observe handwritten letter
-    const letter = document.getElementById('handwrittenLetter');
-    if (letter) {
-        observer.observe(letter);
-        letter.style.transitionDelay = '0.2s'; // optional delay
-        }
+    // Observe notebook
+    const notebook = document.querySelector('.notebook');
+    if (notebook) {
+        observer.observe(notebook);
+    }
 
     // ---- Side Navigation Active State ----
     const sections = document.querySelectorAll('.section');
