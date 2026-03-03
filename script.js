@@ -112,10 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Observe notebook
+    // ---- Show notebook after intro ----
     const notebook = document.querySelector('.notebook');
-    if (notebook) {
-        observer.observe(notebook);
-    }
+    setTimeout(() => {
+        if (notebook) {
+        notebook.classList.add('visible'); // triggers the fade-in CSS
+        }
+    }, 10000); // 10s delay to sync with intro animations
 
     // ---- Side Navigation Active State ----
     const sections = document.querySelectorAll('.section');
