@@ -29,8 +29,8 @@
     --font-display: 'Dancing Script', cursive;
     --font-handwritten: 'Caveat', cursive;
     --font-body: 'Poppins', sans-serif;
-    --font-signature: 'Sacramento', cursive;
-    --font-notebook: 'Indie Flower', cursive;
+    --font-signature:'Dancing Script', cursive;
+    --font-notebook: 'Cormorant Garamond', cursive;
 }
 
 /* ---- Reset & Base ---- */
