@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
     });
 
+    
+
     // ---- Scroll Animations (Intersection Observer) ----
     const observerOptions = {
         threshold: 0.15,
@@ -156,18 +158,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const blowBtn = document.getElementById('blowBtn');
     const wishText = document.getElementById('wishText');
     const candles = document.querySelectorAll('.candle');
+    const blowSound = document.getElementById('blowSound');
+    const confettiSound = document.getElementById('confettiSound');
+
+    let hasBlown = false;
 
     blowBtn.addEventListener('click', () => {
+
+        if (hasBlown) return; // prevent multiple clicks    
+        hasBlown = true;
+
+        // Button press effect
+        blowBtn.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            blowBtn.style.transform = "scale(1)";
+        }, 150);
+
+        // Play blow sound
+        if (blowSound) {
+            blowSound.currentTime = 0;
+            blowSound.play().catch(() => {});
+        }
+
+        // Blow candles one by one
         candles.forEach((c, i) => {
             setTimeout(() => {
                 c.classList.add('blown-out');
             }, i * 200);
         });
+
         blowBtn.classList.add('blown');
+
         setTimeout(() => {
+
             wishText.classList.add('show');
+
+            // Launch confetti
             launchMiniConfetti();
-        }, candles.length * 200 + 300);
+
+            // Play confetti sound
+            if (confettiSound) {
+                confettiSound.currentTime = 0;
+                confettiSound.play().catch(() => {});
+            }
+
+        }, candles.length * 200 + 200);
     });
 
     // ---- Gallery Photo Click (Play Music & Lightbox) ----
