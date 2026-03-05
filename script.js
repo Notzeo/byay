@@ -223,23 +223,44 @@ document.addEventListener('DOMContentLoaded', () => {
             const caption = item.dataset.caption;
             const img = item.querySelector('img');
 
-            // Play music
-            if (song && song !== '') {
-                if (currentlyPlaying === song && !photoMusic.paused) {
-                    // If same song, show lightbox
-                } else {
-                    
-                    const startTime = parseFloat(item.dataset.start) || 0;
-                    photoMusic.src = song;              
-                    photoMusic.addEventListener('loadedmetadata', () => {
-                        photoMusic.currentTime = startTime;
-                        photoMusic.play().catch(e => console.log('Audio play prevented:', e));
-                    }, { once: true });
-                    currentlyPlaying = song;
-                    npCaption.textContent = caption;
-                    nowPlaying.classList.add('show');
+        // Play music
+        if (song && song !== '') {
+            if (currentlyPlaying === song && !photoMusic.paused) {
+                // If same song, show lightbox only
+            } else {
+            
+                const startTime = parseFloat(item.dataset.start) || 0;
+                const endTime = parseFloat(item.dataset.end);
+            
+                // Stop any previous playback cleanly
+                photoMusic.pause();
+                photoMusic.currentTime = 0;
+            
+                photoMusic.src = song;
+            
+                photoMusic.addEventListener('loadedmetadata', () => {
+                    photoMusic.currentTime = startTime;
+                    photoMusic.play().catch(e => console.log('Audio play prevented:', e));
+                }, { once: true });
+            
+                // 🔥 Stop at specific time if data-end exists
+                if (!isNaN(endTime)) {
+                
+                    const stopHandler = () => {
+                        if (photoMusic.currentTime >= endTime) {
+                            photoMusic.pause();
+                            photoMusic.removeEventListener('timeupdate', stopHandler);
+                        }
+                    };
+                
+                    photoMusic.addEventListener('timeupdate', stopHandler);
                 }
+            
+                currentlyPlaying = song;
+                npCaption.textContent = caption;
+                nowPlaying.classList.add('show');
             }
+        }
 
             // Show lightbox
             if (img) {
