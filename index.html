@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <!-- Photo 2 -->
-                <div class="gallery-item" data-song="./lady.mp3" data-start="177" data-end="207" data-caption="Cutest 💕">
+                <div class="gallery-item" data-song="./those_eyes.mp3" data-start="47" data-end="80" data-caption="Cutest 💕">
                     <div class="photo-frame">
                         <img src="./2.jpg" alt="Bubble" loading="lazy">
                         <div class="photo-overlay">
@@ -320,7 +320,14 @@
             <p class="lightbox-caption" id="lightboxCaption"></p>
         </div>
     </div>
-    <button onclick="startDream()">A dream from That Day… 💭</button>
+    <div id="dreamOverlay" class="dream-overlay" onclick="nextDreamImage()">
+    <span class="dream-close" onclick="event.stopPropagation(); closeDream();">✕</span>
+    <img id="dreamImage" class="dream-image" />
+    </div>
+
+    <button class="dream-btn" onclick="startDream()">
+    🫧 One Lil Dream it never happened but...
+    </button>
 
     <!-- ============ SECTION 6: STAR WISHES ============ -->
     <section id="stars-section" class="section">
@@ -505,13 +512,13 @@
                             <!-- Replace the text below with your own words -->
                             <!-- ============================================ -->
 
-                            Happy 20th birthday, dear! 🫧
+                            Happyy birthdayy, dear! 🫧
                             <br><br>
-                            It is late, and I am sitting here just thinking. Not doing much else. Just thinking about you, about the fact that today you turn 20, and about how much has happened in what is honestly not that long a time.
+                            It's late, and I'm sitting here just thinking. Not doing much else. Just thinking about you, about the fact that today you turn 20, and about how much has happened in what is honestly not that long a time.
                             <br>
                             I want to write this properly. So I am going to take my time with it.
                             <br>                    
-                            It started on 27 April with just a “hello.”
+                            Well as you know it was there since a very long time just the fact that I could never gather the confidence to initiate, this specific thing btw I had planned to tell you today but you chaluuu ruined the plan. So then it started on 27 April with just a “hello.”
                             <br>                       
                             That sounds simple when I say it like that, but I sat with my phone for a while before I actually sent it. I was nervous in that quiet way where you keep telling yourself it is not a big deal, but your hands are doing something different. I just wanted to talk to you. I did not have a plan beyond that. I just felt like I wanted to know you, and the only way to find out where that could go was to actually say something.
                             <br>                        
@@ -521,15 +528,15 @@
                             <br>                        
                             I think about that sometimes. How much can begin from one small decision to not talk yourself out of something.
                             <br>                        
-                            The conversations grew slowly, then faster. I found myself looking forward to them in a way that was becoming harder to ignore. There was something natural about talking to you that I was not expecting. Not effortless, but comfortable. Like I did not have to adjust myself to be understood. I could just say what I meant and trust it would land the right way.
+                            The conversations grew slowly, then faster. I found myself looking forward to them in a way that was becoming harder to ignore. There was something natural about talking to you just I expected when saw you the first time. Not effortless, but comfortable. Like I did not have to adjust myself to be understood. I could just say what I meant and trust it would land the right way.
                             <br>                        
-                            By 17 May, I already knew how I felt. I knew it was fast. I was aware of that. But I also did not want to sit on something real and pretend it was not there. So I said it. I told you what I felt and left the rest to you. No pressure. No expectations. Just honesty.
+                            By 17 May, I already knew how I felt. I knew it was fast. I was aware of that. But I also did not want to sit on something real and pretend it was not there as it was there since a very long time. So I said it. I told you what I felt and left the rest to you. No pressure or expectations. Just honesty.
                             <br>                        
-                            You took your time, which made sense. And then on 24 June, you said yes.
+                            You took your time, which made sense I knew I rushed there too because it's so hard to explain that situation, the feeling I should have given more time to you but then on 24 June, you said yes.
                             <br>                        
-                            I remember that day clearly.
+                            I remember that day clearly it was soo special for me there were butterflies all around that entire night.
                             <br>                        
-                            We met for the first time on 7 August. I tried not to overthink it beforehand, which is its own kind of overthinking. But when it actually happened, it felt easier than I imagined. You were exactly who I had been talking to all those months. That might sound obvious, but it is not always obvious until you are standing in front of someone. With you, it just felt right. Like the person I already knew had simply stepped into real life.
+                            The day we met for the first time on 7 August. I tried not to overthink it beforehand, which is its own kind of overthinking. But when it actually happened, it felt easier than I imagined. You were exactly who I had been talking to all those months. That might sound obvious, but it is not always obvious until you are standing in front of someone. With you, it just felt right. Like the person I already knew had simply stepped into real life.
                             <br>                        
                             It has been less than a year. Less than a year since that first hello. And when I sit with all of it, it does not feel small. It feels full. It feels like real time, not something passing by unnoticed.
                             <br>                        
@@ -539,7 +546,7 @@
                             <br>                        
                             There are things about you that I notice, and I do not always say them out loud, so let me say some of them here.
                             <br>                        
-                            Your smile. I am not going to over describe it. I will just say it changes the mood of whatever moment it appears in. It makes things warmer.
+                            Your smile. I am not going to over describe it. I will just say it changes the mood of whatever moment it appears in. It makes things warmer, moments lighter.
                             <br>                        
                             The way you are curious about things. You ask questions because you actually want to understand. You go a little deeper instead of staying at the surface. That is something I genuinely admire.
                             <br>                        
@@ -674,23 +681,17 @@
         </a>
     </nav>
 
-    <!-- Music Toggle -->
+    <!-- Music Toggle
     <button class="music-toggle" id="musicToggle" title="Toggle Background Music">
         <span class="music-icon">🎵</span>
         <span class="music-bars">
             <span></span><span></span><span></span>
         </span>
-    </button>
-    <div id="dreamOverlay" class="dream-overlay">
-    <div class="dream-content">
-        <img id="dreamImage" src="./img1.png">
-        <p class="dream-text">Maybe it never happened… but it felt real.</p>
-    </div>
-</div>
+    </button> -->
 
     <script src="script.js"></script>
     <audio id="blowSound" src="sounds/blow.mp3" preload="auto"></audio>
-    <audio id="confettiSound" src="sounds/confetti.mp3" preload="auto"></audio>
+    <audio id="confettiSound" src="./dragon-studio-bubble-pop-406640.mp3" preload="auto"></audio>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>

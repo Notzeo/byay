@@ -577,27 +577,46 @@ let dreamImages = [
 let dreamIndex = 0;
 
 function startDream() {
-    document.getElementById("dreamOverlay").style.display = "flex";
+    const overlay = document.getElementById("dreamOverlay");
+    const img = document.getElementById("dreamImage");
+
+    overlay.style.display = "flex";
+    overlay.classList.add("active");
+
     dreamIndex = 0;
-    showDreamImage();
+    img.src = dreamImages[dreamIndex];
 }
 
-function showDreamImage() {
-    let img = document.getElementById("dreamImage");
+function nextDreamImage() {
+    const img = document.getElementById("dreamImage");
+
+    dreamIndex++;
+
+    if (dreamIndex >= dreamImages.length) {
+        closeDream();
+        return;
+    }
 
     img.style.opacity = 0;
 
     setTimeout(() => {
         img.src = dreamImages[dreamIndex];
         img.style.opacity = 1;
-        dreamIndex++;
-
-        if (dreamIndex < dreamImages.length) {
-            setTimeout(showDreamImage, 2500);
-        } else {
-            setTimeout(() => {
-                document.getElementById("dreamOverlay").style.display = "none";
-            }, 2500);
-        }
-    }, 800);
+    }, 400);
 }
+
+function closeDream() {
+    const overlay = document.getElementById("dreamOverlay");
+    overlay.classList.remove("active");
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 500);
+}
+
+// Close with ESC
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeDream();
+    }
+});

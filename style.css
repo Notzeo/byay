@@ -2060,3 +2060,47 @@ html {
   transform: scale(1.1);
   background: rgba(255,255,255,0.1);
 }
+
+.dream-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.dream-overlay.active {
+    opacity: 1;
+}
+
+.dream-image {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.dream-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+.dream-btn {
+    background: #ffb6d9;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dream-btn:hover {
+    transform: scale(1.05);
+}
