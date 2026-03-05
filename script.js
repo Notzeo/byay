@@ -228,8 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentlyPlaying === song && !photoMusic.paused) {
                     // If same song, show lightbox
                 } else {
-                    photoMusic.src = song;
-                    photoMusic.play().catch(e => console.log('Audio play prevented:', e));
+                    
+                    const startTime = parseFloat(item.dataset.start) || 0;
+                    photoMusic.src = song;              
+                    photoMusic.addEventListener('loadedmetadata', () => {
+                        photoMusic.currentTime = startTime;
+                        photoMusic.play().catch(e => console.log('Audio play prevented:', e));
+                    }, { once: true });
                     currentlyPlaying = song;
                     npCaption.textContent = caption;
                     nowPlaying.classList.add('show');
@@ -280,16 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
         star.style.animationDelay = Math.random() * 5 + 's';
         starsSky.appendChild(star);
     }
-    // // Generate shooting stars
-    // for (let i = 0; i < 3; i++) {
-    //     const shoot = document.createElement('div');
-    //     shoot.classList.add('shooting-star');
-    //     shoot.style.left = Math.random() * 60 + '%';
-    //     shoot.style.top = Math.random() * 40 + '%';
-    //     shoot.style.animationDelay = (Math.random() * 8 + i * 5) + 's';
-    //     shoot.style.animationDuration = (Math.random() * 3 + 3) + 's';
-    //     starsSky.appendChild(shoot);
-    // }
+
 
     // ---- Wishes Carousel ----
     const wishSlides = document.querySelectorAll('.wish-slide');
@@ -325,10 +321,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wishNext.addEventListener('click', () => goToWish(currentWish + 1));
     wishPrev.addEventListener('click', () => goToWish(currentWish - 1));
 
-    // // Auto advance wishes
-    // setInterval(() => {
-    //     goToWish(currentWish + 1);
-    // }, 5000);
 
     // ---- Gift Box ----
     const giftBox = document.getElementById('giftBox');
@@ -492,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //         bgMusic.pause();
     //         musicToggle.classList.remove('playing');
     //     }
-    // });
+    // });v
 
     // ---- Age Counter Animation ----
     const ageCounter = document.getElementById('age-counter');
