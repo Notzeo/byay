@@ -1504,7 +1504,7 @@ body {
 
 .letter-signature {
     font-family: var(--font-signature);
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--pink-dark);
     display: block;
     margin-top: 5px;
